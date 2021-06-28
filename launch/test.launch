@@ -11,7 +11,6 @@
 
     <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
             <arg name="camera"                         value="$(arg camera)"/>
-            <arg name="clip_distance"                   value="$(arg clip_distance)"/>
             
     </include>
 
