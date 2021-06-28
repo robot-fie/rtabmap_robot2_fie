@@ -5,7 +5,6 @@
                         apt-get install ros-kinetic-rtabmap-ros
     -->
     <arg name="camera"              	  default="D435i"/>		<!-- Note: Replace with camera name -->
-    <arg name="clip_distance"             default="-2"/>
     <arg name="use_rviz"                  default="false"/>
     <arg name="use_rtabmapviz"            default="false"/>
     
