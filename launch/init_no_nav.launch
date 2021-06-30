@@ -25,4 +25,14 @@
             <arg name="rviz"               value="$(arg use_rviz)"/>
             <arg name="rtabmapviz"         value="$(arg use_rtabmapviz)"/>
     </include>
+
+    <!--
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    -->
+
+    <include file="$(find robot2_setup_tf)/launch/robot2_setup_tf.launch" />
+    
+    <node name="base_controller" pkg="base_controller_robot2" type="base_controller_node" />
+
+    <node name="panda_motor_driver" pkg="panda_motor_driver" type="panda_driver_motors.py" />
 </launch>
