@@ -4,6 +4,7 @@
       <remap from="openni_points" to="/planner_cloud"/>
       <remap from="map" to="/rtabmap/proj_map"/>
       <remap from="move_base_simple/goal" to="/planner_goal"/>
+      <remap from="/planner/cmd_vel" to="/cmd_vel" />
       <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
          <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="global_costmap" />
          <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="local_costmap" />
