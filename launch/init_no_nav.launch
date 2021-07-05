@@ -32,7 +32,7 @@
 
     <include file="$(find robot2_setup_tf)/launch/robot2_setup_tf.launch" />
     
-    <node name="base_controller" pkg="base_controller_robot2" type="base_controller_node" />
+    <node name="base_controller" pkg="base_controller_robot2" type="base_controller_robot2_node" />
 
-    <node name="panda_motor_driver" pkg="panda_motor_driver" type="panda_driver_motors.py" />
+    <node name="panda_motor_driver" pkg="motors_panda" type="panda_dir.py" />
 </launch>
