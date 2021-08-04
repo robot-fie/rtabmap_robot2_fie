@@ -7,11 +7,10 @@
     <arg name="camera"              	  default="D435i"/>		<!-- Note: Replace with camera name -->
     <arg name="use_rviz"                  default="false"/>
     <arg name="use_rtabmapviz"            default="false"/>
-    
 
     <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
             <arg name="camera"                         value="$(arg camera)"/>
-            
+            <arg name="align_depth"                    value="true"/>
     </include>
 
     <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
