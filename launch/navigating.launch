@@ -4,7 +4,7 @@
                   For installation type:
                         apt-get install ros-kinetic-rtabmap-ros
     -->
-    <arg name="camera"              	  default="D435i"/>		<!-- Note: Replace with camera name -->
+    <arg name="camera"              	  default="camera"/>		<!-- Note: Replace with camera name -->
     <arg name="use_rviz"                  default="false"/>
     <arg name="use_rtabmapviz"            default="false"/>
 
@@ -14,7 +14,6 @@
     </include>
 
     <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
-            <arg name="rtabmap_args"       value="--delete_db_on_start"/>
             <arg name="depth_topic"        value="/$(arg camera)/aligned_depth_to_color/image_raw"/>
             <arg name="frame_id"           value="$(arg camera)_link"/>
             <arg name="visual_odometry"    value="true"/>
@@ -34,4 +33,16 @@
     <node name="base_controller" pkg="base_controller_robot2" type="base_controller_robot2_node" />
 
     <node name="panda_motor_driver" pkg="motors_panda" type="panda_dir.py" />
+    <group ns="planner">
+      <remap from="map" to="/rtabmap/grid_map"/>
+      <remap from="/planner/cmd_vel" to="/cmd_vel" />
+      <remap from="/move_base_simple/goal" to="/planner/move_base_simple/goal" />
+      <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+         <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+         <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+         <rosparam file="$(find rtabmap_robot2_fie)/local_costmap_params.yaml" command="load" />
+         <rosparam file="$(find rtabmap_robot2_fie)/global_costmap_params.yaml" command="load" />
+         <rosparam file="$(find rtabmap_robot2_fie)/base_local_planner_params.yaml" command="load" />
+      </node>
+   </group>
 </launch>
