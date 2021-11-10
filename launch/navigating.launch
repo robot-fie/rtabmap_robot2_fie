@@ -13,7 +13,8 @@
             <arg name="align_depth"                    value="true"/>
     </include>
 
-    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <include file="$(find rtabmap_robot2_fie)/launch/rtabmap.launch">
+            <arg name="rtabmap_args"       value="--delete_db_on_start"/>
             <arg name="depth_topic"        value="/$(arg camera)/aligned_depth_to_color/image_raw"/>
             <arg name="frame_id"           value="$(arg camera)_link"/>
             <arg name="visual_odometry"    value="true"/>
@@ -22,6 +23,7 @@
             <arg name="queue_size"         value="200"/>
             <arg name="rviz"               value="$(arg use_rviz)"/>
             <arg name="rtabmapviz"         value="$(arg use_rtabmapviz)"/>
+            
     </include>
 
     <!--
