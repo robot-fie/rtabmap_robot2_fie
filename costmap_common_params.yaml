@@ -3,7 +3,7 @@ raytrace_range: 4.0
 footprint: [[ 0.3,  0.3], [-0.3,  0.3], [-0.3, -0.3], [ 0.3, -0.3]]
 footprint_padding: 0.03
 #robot_radius: ir_of_robot
-inflation_radius: 0.55
+inflation_radius: 0.20
 transform_tolerance: 1
 
 controller_patience: 2.0
@@ -17,6 +17,6 @@ recovery_behaviors: [
 ]
 
 conservative_clear: 
-    reset_distance: 0.50
+    reset_distance: 0.30
 aggressive_clear:
-    reset_distance: 0.25
+    reset_distance: 0.20
