@@ -41,11 +41,11 @@
       <remap from="/planner/cmd_vel" to="/cmd_vel" />
       <remap from="/move_base_simple/goal" to="/planner/move_base_simple/goal" />
       <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-         <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="global_costmap" />
-         <rosparam file="$(find rtabmap_robot2_fie)/costmap_common_params.yaml" command="load" ns="local_costmap" />
-         <rosparam file="$(find rtabmap_robot2_fie)/local_costmap_params.yaml" command="load" />
-         <rosparam file="$(find rtabmap_robot2_fie)/global_costmap_params.yaml" command="load" />
-         <rosparam file="$(find rtabmap_robot2_fie)/base_local_planner_params.yaml" command="load" />
+         <rosparam file="$(find rtabmap_robot2_fie)/configs/costmap_common_params.yaml" command="load" ns="global_costmap" />
+         <rosparam file="$(find rtabmap_robot2_fie)/configs/costmap_common_params.yaml" command="load" ns="local_costmap" />
+         <rosparam file="$(find rtabmap_robot2_fie)/configs/local_costmap_params.yaml" command="load" />
+         <rosparam file="$(find rtabmap_robot2_fie)/configs/global_costmap_params.yaml" command="load" />
+         <rosparam file="$(find rtabmap_robot2_fie)/configs/base_local_planner_params.yaml" command="load" />
       </node>
    </group>
 </launch>

@@ -6,3 +6,8 @@ DISCLAIMER: si bien el repositorio se llama rtabmap_robot2_fie, en realidad lanz
 ```
 roslaunch rtabmap_robot2_fie navigating.launch
 ```
+
+### TODO
+- Limpiar rtabmap.launch
+- Agregar un launch personalizado de realsense2
+- Personalizar configs...
