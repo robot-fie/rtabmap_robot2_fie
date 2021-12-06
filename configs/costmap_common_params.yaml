@@ -1,9 +1,9 @@
 obstacle_range: 3.0
 raytrace_range: 4.0
-footprint: [[ 0.3,  0.3], [-0.3,  0.3], [-0.3, -0.3], [ 0.3, -0.3]]
+footprint: [[ 0.3,  0.2], [-0.3,  0.2], [-0.3, -0.2], [ 0.3, -0.2]]
 footprint_padding: 0.03
 #robot_radius: ir_of_robot
-inflation_radius: 0.20
+inflation_radius: 0.10
 transform_tolerance: 1
 
 controller_patience: 2.0

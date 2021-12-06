@@ -8,9 +8,15 @@
     <arg name="use_rviz"                  default="false"/>
     <arg name="use_rtabmapviz"            default="false"/>
 
-    <include file="$(find realsense2_camera)/launch/rs_aligned_depth.launch">
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
             <arg name="camera"                         value="$(arg camera)"/>
             <arg name="align_depth"                    value="true"/>
+            <arg name="enable_infra1"                   value="true"/>
+            <arg name="enable_infra2"                   value="true"/>
+            <arg name="unite_imu_method"                   value="linear_interpolation"/>
+            <arg name="enable_gyro"                   value="true"/>
+            <arg name="enable_accel"                   value="true"/>
+            <arg name="enable_sync"                   value="true"/>
     </include>
 
     <include file="$(find rtabmap_robot2_fie)/launch/rtabmap.launch">
@@ -21,9 +27,9 @@
             <arg name="camera_info_topic"  value="/$(arg camera)/color/camera_info"/>
             <arg name="queue_size"         value="200"/>
             <arg name="rviz"               value="$(arg use_rviz)"/>
-            <arg name="rtabmapviz"         value="$(arg use_rtabmapviz)"/>
-            
+            <arg name="rtabmapviz"         value="$(arg use_rtabmapviz)"/>   
     </include>
+
 
     <!--
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">

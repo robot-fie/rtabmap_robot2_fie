@@ -236,7 +236,8 @@
           <!-- 0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) -->
           <param name="Odom/Strategy" value="1"/>
           <param name="Odom/ResetCountdown"              value="1" />
-          <param name="GFTT/MinDistance" type="string" value="10" />
+          <param name="GFTT/MinDistance" type="string" value="7" />
+          <param name="Vis/CorGuessWinSize" type="string" value="40" />
         </node>
       </group>
     </group>
