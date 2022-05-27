@@ -1,0 +1,22 @@
+obstacle_range: 3.0
+raytrace_range: 4.0
+footprint: [[ 0.3,  0.2], [-0.3,  0.2], [-0.3, -0.2], [ 0.3, -0.2]]
+footprint_padding: 0.03
+#robot_radius: ir_of_robot
+inflation_radius: 0.30
+transform_tolerance: 1
+
+controller_patience: 2.0
+
+NavfnROS:
+    allow_unknown: true
+
+recovery_behaviors: [
+    {name: conservative_clear, type: clear_costmap_recovery/ClearCostmapRecovery},
+    {name: aggressive_clear, type: clear_costmap_recovery/ClearCostmapRecovery}
+]
+
+conservative_clear: 
+    reset_distance: 0.30
+aggressive_clear:
+    reset_distance: 0.20
